@@ -22,12 +22,12 @@ def open_url(url):
     print(f'{time.asctime()}: Opened a new tab.')
 
 def make_schedule():
-    for Classes in range(num_classes):
-        schedule.every().monday.at(days['monday'][Classes][1]).do(open_url, url = days['monday'][Classes][0])
-        schedule.every().monday.at(days['tuesday'][Classes][1]).do(open_url, url = days['tuesday'][Classes][0])
-        schedule.every().wednesday.at(days['wednesday'][Classes][1]).do(open_url, url = days['wednesday'][Classes][0])
-        schedule.every().thursday.at(days['thursday'][Classes][1]).do(open_url, url = days['thursday'][Classes][0])
-        schedule.every().friday.at(days['friday'][Classes][1]).do(open_url, url = days['friday'][Classes][0])
+    for c in range(num_classes):
+        schedule.every().monday.at(days['monday'][c][1]).do(open_url, url = days['monday'][c][0])
+        schedule.every().monday.at(days['tuesday'][c][1]).do(open_url, url = days['tuesday'][c][0])
+        schedule.every().wednesday.at(days['wednesday'][c][1]).do(open_url, url = days['wednesday'][c][0])
+        schedule.every().thursday.at(days['thursday'][c][1]).do(open_url, url = days['thursday'][c][0])
+        schedule.every().friday.at(days['friday'][c][1]).do(open_url, url = days['friday'][c][0])
 
 path = os.path.normpath(__file__ + os.sep + os.pardir + os.sep + os.pardir + os.sep + 'res')
 os.makedirs(path, exist_ok=True)
